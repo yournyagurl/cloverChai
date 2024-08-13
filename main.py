@@ -15,6 +15,15 @@ from chrisDb import initialize_database, add_member, add_cash, get_cash, add_xp,
 import traceback
 import sqlite3
 import threading
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000)
 
 # Load environment variables from .env file
 load_dotenv()
